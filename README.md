@@ -6,3 +6,4 @@
 
 ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
+[![asciicast](https://asciinema.org/a/450425.svg)](https://asciinema.org/a/450425)
