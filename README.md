@@ -1,10 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/SemyonSt/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/SemyonSt/frontend-project-lvl1/actions)
-
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/4ae045c4e99a1f254689/maintainability)](https://codeclimate.com/github/SemyonSt/frontend-project-lvl1/maintainability)
-
-[![Linter]](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+[![Linter](https://github.com/SemyonSt/frontend-project-lvl1/actions/workflows/LinterPush.yml/badge.svg)](https://github.com/SemyonSt/frontend-project-lvl1/actions/workflows/LinterPush.yml)
 
 ## Brain games
 
