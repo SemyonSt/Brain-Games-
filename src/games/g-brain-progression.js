@@ -1,7 +1,5 @@
 import randomNum from '../random_num.js';
 
-const rules = 'What number is missing in the progression?';
-
 const progression = (a) => {
   const mas = [];
   let b = 0;
@@ -22,7 +20,8 @@ const BrainProgression = () => {
 
   intager[c] = '..';
   const question = intager.join(' ');
+  const rules = 'What number is missing in the progression?';
 
-  return [question, correctAnswer];
+  return [question, correctAnswer, rules];
 };
-export { rules, BrainProgression };
+export default BrainProgression;

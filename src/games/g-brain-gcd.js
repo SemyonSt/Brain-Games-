@@ -1,7 +1,5 @@
 import randomNum from '../random_num.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
-
 const twonumbers = (a, b) => {
   if (b === 0) {
     return a;
@@ -15,7 +13,8 @@ const BrainGcd = () => {
 
   const question = `${a} ${b}`;
   const correctAnswer = (twonumbers(b, a % b)).toString();
+  const rules = 'Find the greatest common divisor of given numbers.';
 
-  return [question, correctAnswer];
+  return [question, correctAnswer, rules];
 };
-export { rules, BrainGcd };
+export default BrainGcd;

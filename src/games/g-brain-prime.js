@@ -1,6 +1,5 @@
 import randomNum from '../random_num.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const intager = (randomNumber) => {
   let resault = true;
   for (let i = 2; i < randomNumber; i += 1) {
@@ -16,7 +15,8 @@ const BrainPrime = () => {
   const randomNumber = randomNum(1, 100);
   const question = randomNumber;
   const correctAnswer = intager(randomNumber) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  return [question, correctAnswer, rules];
 };
 
-export { rules, BrainPrime };
+export default BrainPrime;
