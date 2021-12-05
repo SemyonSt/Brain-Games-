@@ -26,7 +26,6 @@
   "type": "module",
   "homepage": "https://github.com/SemyonSt/frontend-project-lvl1#readme",
   "dependencies": {
-    "ci": "^2.1.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
