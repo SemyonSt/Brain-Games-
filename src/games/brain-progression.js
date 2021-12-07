@@ -1,47 +1,29 @@
 import randomNum from '../random_num.js';
 
-const progression = (stepProgression, lengthProgression) => {
+const progression = (stepProgression, lengthProgression, firstNum) => {
   const mas = [];
-  const firstNum = randomNum(0, 10);
-
   for (let i = 0; i <= lengthProgression; i += 1) {
     mas.push(firstNum + i * stepProgression);
   }
   return mas;
 };
 
-const BrainProgression = () => {
+const lowerBrainProgression = () => {
   const rules = 'What number is missing in the progression?';
-  const game = () => {
+  const roundGenerator = () => {
     const stepProgression = randomNum(1, 10);
     const lengthProgression = randomNum(5, 10);
     const hiddenNum = randomNum(0, lengthProgression);
+    const firstNum = randomNum(0, 10);
 
-    const intager = progression(stepProgression, lengthProgression);
-    const correctAnswer = (intager[hiddenNum]).toString();
+    const GenerateProgression = progression(stepProgression, lengthProgression, firstNum);
+    const correctAnswer = (GenerateProgression[hiddenNum]).toString();
 
-    intager[hiddenNum] = '..';
-    const question = intager.join(' ');
+    GenerateProgression[hiddenNum] = '..';
+    const question = GenerateProgression.join(' ');
     return [question, correctAnswer];
   };
 
-  return [game, rules];
+  return [roundGenerator, rules];
 };
-export default BrainProgression;
-
-/*
-const BrainProgression = () => {
-  const stepProgression = randomNum(1, 10);
-  const lengthProgression = randomNum(5, 10);
-  const hiddenNum = randomNum(0, lengthProgression);
-
-  const intager = progression(stepProgression, lengthProgression);
-  const correctAnswer = (intager[hiddenNum]).toString();
-
-  intager[hiddenNum] = '..';
-  const question = intager.join(' ');
-  const rules = 'What number is missing in the progression?';
-
-  return [question, correctAnswer, rules];
-};
-*/
+export default lowerBrainProgression;

@@ -1,26 +1,26 @@
 import randomNum from '../random_num.js';
 
-const intager = (randomNumber) => {
-  if (randomNumber === 1) {
+const integer = (randomPrimeNum) => {
+  if (randomPrimeNum === 1) {
     return false;
   }
-  for (let i = 2; i < randomNumber / 2; i += 1) {
-    if (randomNumber % i === 0) {
+  for (let i = 2; i < randomPrimeNum / 2; i += 1) {
+    if (randomPrimeNum % i === 0) {
       return false;
     }
   }
   return true;
 };
 
-const BrainPrime = () => {
+const lowerBrainPrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const game = () => {
-    const randomNumber = randomNum(1, 100);
-    const question = randomNumber;
-    const correctAnswer = intager(randomNumber) ? 'yes' : 'no';
+  const roundGenerator = () => {
+    const randomPrimeNum = randomNum(1, 100);
+    const question = randomPrimeNum;
+    const correctAnswer = integer(randomPrimeNum) ? 'yes' : 'no';
     return [question, correctAnswer];
   };
-  return [game, rules];
+  return [roundGenerator, rules];
 };
 
-export default BrainPrime;
+export default lowerBrainPrime;

@@ -9,14 +9,14 @@ const calc = (num1, num2, operator) => {
     case '*':
       return (num1 * num2);
     default:
-      return 'oh sorry';
+      return null;
   }
 };
 
 const operators = ['+', '-', '*'];
-const BrainCalc = () => {
+const lowerBrainCalc = () => {
   const rules = 'What is the result of the expression?';
-  const game = () => {
+  const roundGenerator = () => {
     const num1 = randomNum(1, 10);
     const num2 = randomNum(1, 10);
 
@@ -26,6 +26,6 @@ const BrainCalc = () => {
 
     return [question, correctAnswer];
   };
-  return [game, rules];
+  return [roundGenerator, rules];
 };
-export default BrainCalc;
+export default lowerBrainCalc;
