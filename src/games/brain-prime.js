@@ -4,7 +4,7 @@ const integer = (randomPrimeNum) => {
   if (randomPrimeNum === 1) {
     return false;
   }
-  for (let i = 2; i < randomPrimeNum / 2; i += 1) {
+  for (let i = 2; i <= randomPrimeNum / 2; i += 1) {
     if (randomPrimeNum % i === 0) {
       return false;
     }
