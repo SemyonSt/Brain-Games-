@@ -14,8 +14,8 @@ const calc = (num1, num2, operator) => {
 };
 
 const operators = ['+', '-', '*'];
-const lowerBrainCalc = () => {
-  const rules = 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
+const brainCalc = () => {
   const roundGenerator = () => {
     const num1 = randomNum(1, 10);
     const num2 = randomNum(1, 10);
@@ -28,4 +28,4 @@ const lowerBrainCalc = () => {
   };
   return [roundGenerator, rules];
 };
-export default lowerBrainCalc;
+export default brainCalc;
