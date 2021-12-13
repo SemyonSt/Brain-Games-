@@ -6,11 +6,17 @@ const findGCD = (num1, num2) => {
   }
   return findGCD(num2, num1 % num2);
 };
+
+const generator = () => {
+  const num1 = randomNum(1, 100);
+  const num2 = randomNum(1, 100);
+  return [num1, num2];
+};
+
 const rules = 'Find the greatest common divisor of given numbers.';
 const brainGcd = () => {
   const roundGenerator = () => {
-    const num1 = randomNum(1, 100);
-    const num2 = randomNum(1, 100);
+    const [num1, num2] = generator();
 
     const question = `${num1} ${num2}`;
     const correctAnswer = (findGCD(num2, num1 % num2)).toString();

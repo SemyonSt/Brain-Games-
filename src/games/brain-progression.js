@@ -8,13 +8,18 @@ const generateProgression = (stepProgression, lengthProgression, firstNum) => {
   return mas;
 };
 
+const generator = () => {
+  const stepProgression = randomNum(1, 10);
+  const lengthProgression = randomNum(5, 10);
+  const hiddenNum = randomNum(0, lengthProgression);
+  const firstNum = randomNum(0, 10);
+  return [stepProgression, lengthProgression, hiddenNum, firstNum];
+};
+
 const rules = 'What number is missing in the progression?';
 const brainProgression = () => {
   const roundGenerator = () => {
-    const stepProgression = randomNum(1, 10);
-    const lengthProgression = randomNum(5, 10);
-    const hiddenNum = randomNum(0, lengthProgression);
-    const firstNum = randomNum(0, 10);
+    const [stepProgression, lengthProgression, hiddenNum, firstNum] = generator();
 
     const progression = generateProgression(stepProgression, lengthProgression, firstNum);
     const correctAnswer = (progression[hiddenNum]).toString();

@@ -14,13 +14,19 @@ const calc = (num1, num2, operator) => {
 };
 
 const operators = ['+', '-', '*'];
+
+const generator = () => {
+  const num1 = randomNum(1, 10);
+  const num2 = randomNum(1, 10);
+  const operator = operators[randomNum(0, 2)];
+  return [num1, num2, operator];
+};
+
 const rules = 'What is the result of the expression?';
 const brainCalc = () => {
   const roundGenerator = () => {
-    const num1 = randomNum(1, 10);
-    const num2 = randomNum(1, 10);
+    const [num1, num2, operator] = generator();
 
-    const operator = operators[randomNum(0, 2)];
     const question = `${num1} ${operator} ${num2}`;
     const correctAnswer = (calc(num1, num2, operator)).toString();
 
