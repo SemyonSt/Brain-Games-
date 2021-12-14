@@ -13,25 +13,20 @@ const calc = (num1, num2, operator) => {
   }
 };
 
+const rules = 'What is the result of the expression?';
+
 const operators = ['+', '-', '*'];
 
-const generator = () => {
+const roundGenerator = () => {
   const num1 = randomNum(1, 10);
   const num2 = randomNum(1, 10);
   const operator = operators[randomNum(0, 2)];
-  return [num1, num2, operator];
+
+  const question = `${num1} ${operator} ${num2}`;
+  const correctAnswer = (calc(num1, num2, operator)).toString();
+
+  return [question, correctAnswer];
 };
 
-const rules = 'What is the result of the expression?';
-const brainCalc = () => {
-  const roundGenerator = () => {
-    const [num1, num2, operator] = generator();
-
-    const question = `${num1} ${operator} ${num2}`;
-    const correctAnswer = (calc(num1, num2, operator)).toString();
-
-    return [question, correctAnswer];
-  };
-  return [roundGenerator, rules];
-};
+const brainCalc = () => [roundGenerator, rules];
 export default brainCalc;

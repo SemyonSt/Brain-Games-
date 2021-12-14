@@ -10,21 +10,17 @@ const findPrimeNum = (randomPrimeNum) => {
   }
   return randomPrimeNum > 1;
 };
-const generator = () => {
-  const randomPrimeNum = randomNum(1, 100);
-  return randomPrimeNum;
-};
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const brainPrime = () => {
-  const roundGenerator = () => {
-    const randomPrimeNum = generator();
 
-    const question = randomPrimeNum;
-    const correctAnswer = findPrimeNum(randomPrimeNum) ? 'yes' : 'no';
-    return [question, correctAnswer];
-  };
-  return [roundGenerator, rules];
+const roundGenerator = () => {
+  const randomPrimeNum = randomNum(1, 100);
+
+  const question = randomPrimeNum;
+  const correctAnswer = findPrimeNum(randomPrimeNum) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
+
+const brainPrime = () => [roundGenerator, rules];
 
 export default brainPrime;
